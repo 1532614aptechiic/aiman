@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Website Template</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700&family=Source+Serif+4:wght@400;600&display=swap">
+<style>
+:root{
+  --bg:#f4f6f8; --surface:#ffffff; --ink:#16202c; --muted:#5a6775; --line:#d9dfe5;
+  --accent:#0e7490; --accent-ink:#ffffff; --soft:#dff1f5;
+  --head:"Bricolage Grotesque","Trebuchet MS",sans-serif;
+  --body:"Source Serif 4",Georgia,serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#10161d; --surface:#18212b; --ink:#e8edf2; --muted:#9aa8b6; --line:#2a3541;
+    --accent:#4cc3dc; --accent-ink:#06222a; --soft:#173039;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#10161d; --surface:#18212b; --ink:#e8edf2; --muted:#9aa8b6; --line:#2a3541;
+  --accent:#4cc3dc; --accent-ink:#06222a; --soft:#173039;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px);scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:18px/1.65 var(--body)}
+h1,h2,h3{font-family:var(--head);line-height:1.1;margin:0 0 .5em;letter-spacing:-.01em}
+h1{font-size:clamp(2.4rem,7vw,4.4rem)}
+h2{font-size:clamp(1.7rem,4vw,2.4rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 1em;max-width:62ch}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--accent);outline-offset:3px}
+.wrap{max-width:1040px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line);background:var(--surface)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-top:14px;padding-bottom:14px;flex-wrap:wrap}
+.logo{font-family:var(--head);font-weight:700;font-size:1.3rem;text-decoration:none;color:var(--ink)}
+nav{display:flex;gap:20px;flex-wrap:wrap}
+nav a{color:var(--ink);text-decoration:none;font-family:var(--head);font-weight:500}
+nav a:hover{color:var(--accent)}
+.btn{display:inline-block;background:var(--accent);color:var(--accent-ink);font-family:var(--head);font-weight:700;padding:13px 24px;border-radius:8px;text-decoration:none;border:0;cursor:pointer;font-size:1rem}
+.btn.alt{background:transparent;color:var(--ink);border:2px solid var(--line)}
+.btn:hover{filter:brightness(1.08)}
+.hero{padding:88px 0 72px}
+.hero p{font-size:1.2rem;color:var(--muted)}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+section{padding:64px 0}
+.band{background:var(--surface);border-block:1px solid var(--line)}
+.features{display:grid;gap:28px;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.features div{border-top:3px solid var(--accent);padding-top:16px}
+.features p{color:var(--muted);margin:0}
+.split{display:grid;gap:40px;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));align-items:center}
+.ph{aspect-ratio:4/3;background:var(--soft);border-radius:12px;display:grid;place-items:center;color:var(--accent);font-family:var(--head)}
+form{display:grid;gap:14px;max-width:520px}
+label{font-family:var(--head);font-weight:500}
+input,textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--ink);font:inherit}
+textarea{min-height:120px;resize:vertical}
+#sent{color:var(--accent);font-family:var(--head);margin:0}
+footer{padding:32px 0;border-top:1px solid var(--line);color:var(--muted);font-size:.95rem}
+footer .wrap{display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <a class="logo" href="#top">YourBrand</a>
+    <nav aria-label="Main">
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <h1>Your main headline goes here</h1>
+    <p>Write one or two sentences that explain what you do and who it is for.</p>
+    <div class="actions">
+      <a class="btn" href="#contact">Get in touch</a>
+      <a class="btn alt" href="#features">See features</a>
+    </div>
+  </div>
+
+  <section id="features" class="band">
+    <div class="wrap">
+      <h2>What you get</h2>
+      <div class="features">
+        <div><h3>Feature one</h3><p>A short line describing this feature or service.</p></div>
+        <div><h3>Feature two</h3><p>A short line describing this feature or service.</p></div>
+        <div><h3>Feature three</h3><p>A short line describing this feature or service.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="wrap split">
+      <div>
+        <h2>About us</h2>
+        <p>Tell your story here: who you are, what you started with, and what you care about.</p>
+        <p>Add a second paragraph with details people should know before contacting you.</p>
+      </div>
+      <div class="ph" role="img" aria-label="Image placeholder">Image here</div>
+    </div>
+  </section>
+
+  <section id="contact" class="band">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <form id="f">
+        <div><label for="n">Name</label><input id="n" required></div>
+        <div><label for="e">Email</label><input id="e" type="email" required></div>
+        <div><label for="m">Message</label><textarea id="m" required></textarea></div>
+        <button class="btn" type="submit">Send message</button>
+        <p id="sent" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 YourBrand</span>
+    <span>hello@yourbrand.com</span>
+  </div>
+</footer>
+
+<script>
+document.getElementById('f').addEventListener('submit',function(ev){
+  ev.preventDefault();
+  document.getElementById('sent').textContent='Message sent. We will reply soon.';
+  this.reset();
+});
+</script>
+</body>
+</html>
